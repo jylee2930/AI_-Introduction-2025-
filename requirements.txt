@@ -1,0 +1,33 @@
+# AI Introduction 2025 - Required Packages
+
+# Data Science & Analysis
+numpy>=1.24.0
+pandas>=2.0.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+scipy>=1.10.0
+
+# Machine Learning
+scikit-learn>=1.3.0
+xgboost>=1.7.0
+lightgbm>=4.0.0
+
+# Deep Learning
+tensorflow>=2.13.0
+keras>=2.13.0
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Jupyter & Development
+jupyter>=1.0.0
+ipykernel>=6.25.0
+notebok>=7.0.0
+
+# Visualization
+plotly>=5.15.0
+bokeh>=3.2.0
+
+# Utilities
+tqdm>=4.65.0
+requests>=2.31.0
+openpyxl>=3.1.0

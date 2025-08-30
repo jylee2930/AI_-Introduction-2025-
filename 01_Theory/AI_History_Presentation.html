@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인공지능의 역사</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            overflow: hidden;
+        }
+
+        .presentation-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slide {
+            display: none;
+            padding: 60px;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .slide h1 {
+            font-size: 3em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide h2 {
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            color: #FFE4B5;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .slide h3 {
+            font-size: 1.8em;
+            margin: 20px 0 15px 0;
+            color: #87CEEB;
+        }
+
+        .slide p, .slide li {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .slide ul {
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .slide li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .timeline-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 10px;
+            min-width: 200px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-item strong {
+            color: #FFD700;
+            font-size: 1.1em;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .slide-counter {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 18px;
+            backdrop-filter: blur(10px);
+        }
+
+        .highlight {
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.3), rgba(255, 165, 0, 0.3));
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 5px;
+        }
+
+        .emoji {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <div class="slide-counter">
+            <span id="current-slide">1</span> / <span id="total-slides">5</span>
+        </div>
+
+        <!-- 슬라이드 1: AI의 탄생과 초기 발전 -->
+        <div class="slide active">
+            <h1>🤖 인공지능의 역사</h1>
+            <h2>AI Introduction 2025</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>1943년</strong><br>
+                    맥컬록-피츠 뉴런 모델
+                </div>
+                <div class="timeline-item">
+                    <strong>1956년</strong><br>
+                    다트머스 회의<br>
+                    "인공지능" 용어 탄생
+                </div>
+                <div class="timeline-item">
+                    <strong>1960년대</strong><br>
+                    ELIZA 챗봇<br>
+                    초기 AI 프로그램들
+                </div>
+            </div>
+            <p><span class="emoji">🎯</span><strong>AI의 탄생과 초기 발전 (1940s-1960s)</strong></p>
+            <p>논리와 규칙 기반의 상징주의 접근법이 주도한 시대</p>
+        </div>
+
+        <!-- 슬라이드 2: 첫 번째 AI 겨울 -->
+        <div class="slide">
+            <h1>❄️ 첫 번째 AI 겨울</h1>
+            <h2>1974-1980: 현실과 기대의 괴리</h2>
+            
+            <div style="display: flex; justify-content: space-around; margin: 40px 0;">
+                <div style="flex: 1; margin: 0 20px;">
+                    <h3>🚫 한계점 발견</h3>
+                    <ul>
+                        <li>컴퓨터 연산 능력 부족</li>
+                        <li>실세계 문제의 복잡성</li>
+                        <li>과도한 기대치</li>
+                    </ul>
+                </div>
+                <div style="flex: 1; margin: 0 20px;">
+                    <h3>🔧 전문가 시스템 부상</h3>
+                    <ul>
+                        <li><span class="highlight">DENDRAL</span> - 화학 분석</li>
+                        <li><span class="highlight">MYCIN</span> - 의료 진단</li>
+                        <li><span class="highlight">XCON</span> - 시스템 구성</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>1974-1980</strong><br>
+                    연구비 대폭 삭감<br>
+                    AI 겨울 시작
+                </div>
+                <div class="timeline-item">
+                    <strong>1980년대</strong><br>
+                    전문가 시스템<br>
+                    상업적 성공
+                </div>
+            </div>
+        </div>
+
+        <!-- 슬라이드 3: 두 번째 AI 겨울과 패러다임 전환 -->
+        <div class="slide">
+            <h1>🥶 두 번째 AI 겨울</h1>
+            <h2>1987-1993: 패러다임의 전환점</h2>
+            
+            <div style="display: flex; justify-content: space-between; margin: 40px 0;">
+                <div style="flex: 1; margin: 0 20px;">
+                    <h3>📉 시장 붕괴</h3>
+                    <ul>
+                        <li>전문가 시스템의 한계</li>
+                        <li>LISP 머신 회사 도산</li>
+                        <li>AI 투자 급감</li>
+                    </ul>
+                </div>
+                <div style="flex: 1; margin: 0 20px;">
+                    <h3>🔄 새로운 접근법</h3>
+                    <ul>
+                        <li><span class="highlight">통계적 방법론</span></li>
+                        <li><span class="highlight">신경망 재부상</span></li>
+                        <li><span class="highlight">확률적 추론</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>1986년</strong><br>
+                    역전파 알고리즘<br>
+                    다층 신경망 학습
+                </div>
+                <div class="timeline-item">
+                    <strong>1997년</strong><br>
+                    IBM Deep Blue<br>
+                    체스 챔피언 격파
+                </div>
+            </div>
+        </div>
+
+        <!-- 슬라이드 4: 머신러닝 혁명 -->
+        <div class="slide">
+            <h1>📈 머신러닝 혁명</h1>
+            <h2>2000s-2010s: 빅데이터와 클라우드의 시대</h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 30px 0;">
+                <div>
+                    <h3>🏢 빅테크 기업의 AI 투자</h3>
+                    <ul>
+                        <li><span class="highlight">Google</span> - 검색, PageRank</li>
+                        <li><span class="highlight">Amazon</span> - 추천 시스템</li>
+                        <li><span class="highlight">Facebook</span> - 뉴스피드</li>
+                        <li><span class="highlight">Microsoft</span> - 음성인식</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>🎯 핵심 발전사항</h3>
+                    <ul>
+                        <li>SVM, 랜덤 포레스트</li>
+                        <li>클러스터링 알고리즘</li>
+                        <li>오픈소스 생태계</li>
+                        <li>실생활 적용 확산</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>2001년</strong><br>
+                    Netflix 추천 시스템
+                </div>
+                <div class="timeline-item">
+                    <strong>2007년</strong><br>
+                    iPhone & 모바일 AI
+                </div>
+                <div class="timeline-item">
+                    <strong>2011년</strong><br>
+                    IBM Watson<br>
+                    Jeopardy! 우승
+                </div>
+            </div>
+        </div>
+
+        <!-- 슬라이드 5: 딥러닝 혁명과 현재 -->
+        <div class="slide">
+            <h1>🚀 딥러닝 혁명</h1>
+            <h2>2010s-현재: AI의 르네상스</h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 30px 0;">
+                <div>
+                    <h3>🧠 기술적 돌파구</h3>
+                    <ul>
+                        <li><span class="highlight">2012년</span> - AlexNet & ImageNet</li>
+                        <li><span class="highlight">2017년</span> - Transformer 아키텍처</li>
+                        <li><span class="highlight">2020년</span> - GPT-3 언어모델</li>
+                        <li><span class="highlight">2022년</span> - ChatGPT 대중화</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>🌍 현재 응용분야</h3>
+                    <ul>
+                        <li>자율주행 & 컴퓨터 비전</li>
+                        <li>자연어 처리 & 번역</li>
+                        <li>음성인식 & 합성</li>
+                        <li>추천시스템 & 개인화</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>2016년</strong><br>
+                    AlphaGo vs 이세돌<br>
+                    인간 직관의 한계 돌파
+                </div>
+                <div class="timeline-item">
+                    <strong>2023년</strong><br>
+                    GPT-4, Claude<br>
+                    AGI를 향한 경주
+                </div>
+                <div class="timeline-item">
+                    <strong>미래</strong><br>
+                    🔮 AGI 시대<br>
+                    인간-AI 협업
+                </div>
+            </div>
+
+            <div style="margin-top: 40px; font-size: 1.1em; font-style: italic;">
+                <p>"AI의 역사는 실패와 성공의 반복입니다.<br>
+                현재 우리는 AI 발전의 가장 흥미진진한 시대를 살고 있습니다."</p>
+            </div>
+        </div>
+
+        <!-- 네비게이션 -->
+        <div class="controls">
+            <button class="btn" onclick="prevSlide()">◀ 이전</button>
+            <button class="btn" onclick="nextSlide()">다음 ▶</button>
+            <button class="btn" onclick="toggleFullscreen()">전체화면</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        document.getElementById('total-slides').textContent = totalSlides;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            document.getElementById('current-slide').textContent = currentSlide + 1;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        // 키보드 제어
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            } else if (e.key === 'f' || e.key === 'F11') {
+                e.preventDefault();
+                toggleFullscreen();
+            }
+        });
+
+        // 마우스 클릭으로 다음 슬라이드
+        document.addEventListener('click', (e) => {
+            if (!e.target.classList.contains('btn')) {
+                nextSlide();
+            }
+        });
+
+        // 터치 제스처 지원
+        let startX = null;
+        document.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            if (startX === null) return;
+            const endX = e.changedTouches[0].clientX;
+            const diffX = startX - endX;
+
+            if (Math.abs(diffX) > 50) {
+                if (diffX > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+            startX = null;
+        });
+    </script>
+</body>
+</html>
